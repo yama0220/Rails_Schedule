@@ -1,0 +1,18 @@
+.header {
+  background-color: #1c1d3b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer {
+  background-color: #1c1d3b;
+  color: white;
+  text-align: right;
+  padding: 20px;
+}
+
+.ButtonDesign {
+  /*background-color: #2962ff;*/
+  color: white;
+}

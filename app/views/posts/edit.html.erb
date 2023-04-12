@@ -1,0 +1,32 @@
+<h2>予定を編集してください</h2>
+
+<%= render "shared/error", obj: @post %>
+
+<%= form_with model: @post do |t|%>
+  <section>
+    <div>
+      <div><%= t.label :title, "タイトル"%></div>
+      <div><%= t.text_field :title%></div>
+    </div>
+    <div>
+      <div><%= t.label :start_day, "開始日"%></div>
+      <div><%= t.text_field :start_day%></div>
+    </div>
+    <div>
+      <div><%= t.label :end_day, "終了日"%></div>
+      <div><%= t.text_field :end_day%></div>
+    </div>
+    <div>
+      <th><%= t.check_box :all_day, {}, checked_value='○', unchecked_value="" %></th>
+      <th><%= t.label :all_day, "終日の場合はチェックを入れてください" %></th>
+    </div>
+    <div>
+      <div><%= t.label :memo, "スケジュールメモ"%></div>
+      <div><%= t.text_area :memo%></div>
+    </div>
+    <div>
+      <button><%= link_to "キャンセル", :posts %></button>
+      <a><%= t.submit "保存"%></a>
+    </div>
+  </section>
+<%end%>

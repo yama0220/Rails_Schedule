@@ -1,0 +1,41 @@
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<%end%>
+
+<table>
+  <thead>
+    <tr>
+      <tr>予定一覧</tr>
+      <button><%= link_to "新規追加", :new_post%></button>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= post.title %></td>
+      <td><%= post.start_day.strftime('%Y/%m/%d') %></td>
+      <td><%= post.end_day.strftime('%Y/%m/%d') %></td>
+      <td><%= post.all_day %></td>
+      <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+      <td><%= link_to "詳細", post %></td>
+      <td><%= link_to "編集", [:edit, post] %></td>
+      <td><%= link_to "削除", post, method: :delete, data:{ confirm: "本当に削除しますか？" }%></td>
+    </tr>
+    <% end %>
+    <p><%= "予定件数 : #{@posts.count}" %></p>
+  </tbody>
+
+
+      
+
+</table>
