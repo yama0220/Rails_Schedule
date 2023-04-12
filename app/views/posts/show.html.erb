@@ -1,0 +1,25 @@
+<a><%= link_to "一覧に戻る", :posts %></a>
+
+<div>
+  <th><%= @post.title%></th>
+  <button><%= link_to "編集", :edit_post %></button>
+</div>
+
+<section>
+    <div>
+      <th>開始日</th>
+      <th><%= @post.start_day.strftime('%Y/%m/%d') %></th>
+    </div>
+    <div>
+      <th>終了日</th>
+      <th><%= @post.end_day.strftime('%Y/%m/%d') %></th>
+    </div>
+    <div>
+      <th>終日</th>
+      <th><%= @post.all_day %></th>
+    </div>
+    <div>
+      <th>スケジュールメモ</th>
+      <th><%= @post.memo%></th>
+    </div>
+</section>

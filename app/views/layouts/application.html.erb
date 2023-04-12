@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <header>
+      <p class="header">スケジュール管理アプリ</p>
+    </header>
     <%= yield %>
+    <footer>
+      <p class="footer"><%= "本日の日付 : #{Date.today.strftime("%Y/%m/%d")}" %></p>
+    </footer>
   </body>
 </html>
